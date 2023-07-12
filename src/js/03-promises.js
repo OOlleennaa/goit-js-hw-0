@@ -33,8 +33,11 @@ function onPromiseCreate(e) {
   let inputStep = Number(step.value);
   let inputAmount = Number(amount.value);
 
-  for (let i = 1; i <= inputAmount; i += 1) {
-    inputDelay += inputStep;
+  // for (let i = 1; i <= inputAmount; i += 1) {
+  //   inputDelay += inputStep;
+
+  for (let i = 0; i < inputAmount; i += 1) {
+    inputDelay += inputStep * i; 
 
     createPromise(i, inputDelay)
       .then(({ position, delay }) => {
